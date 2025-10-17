@@ -18,7 +18,7 @@ export default function Home() {
           PetaInfo
         </Link>
         <div className="space-x-6 text-sm font-medium text-gray-300">
-          <Link href="#today" className="hover:text-purple-400 transition">Today's News</Link>
+          <Link href="#today" className="hover:text-purple-400 transition">Today&apos;s News</Link>
           <Link href="#hottopic" className="hover:text-purple-400 transition">Hot Topic</Link>
           <Link href="#video" className="hover:text-purple-400 transition">Archive</Link>
         </div>
@@ -27,13 +27,13 @@ export default function Home() {
 
       <header className="text-center mb-12 justify">
         <h1 className={`text-5xl font-bold tracking-tight mb-4  `}>Welcome to PetaInfo</h1>
-        <p className="text-lg text-gray-300 max-w-xl mx-auto"> Today's Hot Topic
+        <p className="text-lg text-gray-300 max-w-xl mx-auto"> Today&apos;s Hot Topic
         </p>
       </header>
       <section className="w-full flex justify-center mt-8">
   <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
     <div className="bg-white/5 backdrop-blur-300 border border-white/10 rounded-2xl p-8 shadow-lg">
-      <h2 className="text-2xl font-semibold mb-3">Today's Pick</h2>
+      <h2 className="text-2xl font-semibold mb-3">Today&apos;s Pick</h2>
       {/* NOTE: changed outer <p> to <div> to avoid nested <p> elements which cause React/Next.js
           hydration errors. Keep block text containers as <div> or use <span> for inline
           content instead of nesting <p> inside another <p>. */}
