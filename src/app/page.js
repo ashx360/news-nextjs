@@ -1,103 +1,126 @@
-import Image from "next/image";
+import Link from 'next/link'
+import { Playfair_Display } from 'next/font/google'
 
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'], 
+  variable: '--font-playfair',
+})
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    
+  <main className="bg-[url('/images/bg.jpg')] bg-cover bg-center h-screen min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white flex flex-col items-center justify-start pt-24 pb-12 px-6">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-purple-700">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <Link href="/" className={` text-purple-400 hover:text-white transition`}>
+          PetaInfo
+        </Link>
+        <div className="space-x-6 text-sm font-medium text-gray-300">
+          <Link href="#today" className="hover:text-purple-400 transition">Today</Link>
+          <Link href="#hottopic" className="hover:text-purple-400 transition">Hot Topic</Link>
+          <Link href="#video" className="hover:text-purple-400 transition">Video</Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+    </nav>
+
+      <header className="text-center mb-12 justify">
+        <h1 className={`text-5xl font-bold tracking-tight mb-4  `}>Welcome to PetaInfo</h1>
+        <p className="text-lg text-gray-300 max-w-xl mx-auto"> Today's Hot Topic
+        </p>
+      </header>
+      <section className="w-full flex justify-center mt-8">
+  <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="bg-white/5 backdrop-blur-300 border border-white/10 rounded-2xl p-8 shadow-lg">
+      <h2 className="text-2xl font-semibold mb-3">Left Section</h2>
+      {/* Add content for left section here */}
+      <p className="text-gray-300">
+        <p className="text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec nunc non nunc eleifend rutrum. Etiam pulvinar faucibus ultrices. Nulla ut vestibulum mi. Aenean eu viverra orci. Quisque lacinia tortor eu erat dignissim commodo. In eu urna ac nisl pharetra rutrum. Etiam quis ultrices massa. Suspendisse dignissim ipsum sem, sit amet pellentesque nunc vehicula eget.
+
+Curabitur at porttitor ligula, ut faucibus quam. Nulla semper sodales massa, ut efficitur magna tristique quis. Nam non tortor tristique, elementum mi quis, faucibus purus. Cras eu sapien eu elit congue congue ut quis elit. Nulla fringilla, neque non feugiat maximus, arcu eros suscipit est, pellentesque cursus purus elit et nulla. Mauris eu egestas elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed eros placerat, porta nulla id, sollicitudin enim. Maecenas sed velit placerat, dignissim erat a, ultrices ex. Integer efficitur, nibh id hendrerit tincidunt, nisl dui pulvinar sapien, in volutpat sem nisl non felis. Aenean varius, augue in tincidunt convallis, massa mauris gravida tellus, quis pellentesque risus risus sodales diam.
+
+Nam et augue ex. In id imperdiet lacus, sed sollicitudin magna. Vestibulum eleifend eleifend interdum. Vestibulum luctus vehicula dolor, volutpat varius dui auctor a. Nullam sagittis diam eu lorem mattis imperdiet. Etiam rhoncus nec dui quis varius. Integer magna lectus, iaculis ut tellus sit amet, commodo consequat orci.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et varius nibh, eu rutrum neque. Quisque id mi feugiat, molestie metus ut, imperdiet sapien. Nulla arcu sapien, fringilla at tincidunt maximus, fringilla a odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum nec ornare urna. Maecenas lobortis odio risus, sit amet vehicula erat bibendum quis. Integer venenatis aliquam ultrices. In sodales dictum eleifend. Praesent et massa et ex tristique lobortis. Vestibulum suscipit est sed sapien dignissim, a pulvinar odio eleifend. Maecenas aliquet pellentesque turpis non consectetur. Nulla feugiat gravida sapien non viverra.
+
+Praesent fringilla nibh leo, ac vehicula dolor volutpat at. Pellentesque pellentesque ultrices nunc at ullamcorper. Nunc nec enim sed lorem ultrices ultricies a egestas eros. Integer rutrum, mauris a porttitor facilisis, ligula augue feugiat orci, eu efficitur purus velit eget massa. Vestibulum blandit lacus enim, in imperdiet quam sodales nec. Sed vel mauris id eros varius imperdiet. Duis non scelerisque dui. Nam sit amet iaculis risus, a mattis lectus. Aenean ultrices interdum eros, gravida pretium risus vehicula id. Nam eget consequat augue. In ut ligula non felis tincidunt faucibus quis vitae lacus. Nulla consectetur tempor rhoncus.</p></p>
     </div>
-  );
+    <div className="bg-white/5 backdrop-blur-300 border border-white/10 rounded-2xl p-8 shadow-lg">
+      <h2 className="text-3xl font-semibold mb-3">Featured Projects</h2>
+      <img src="/images/tes.jpg" alt="Test" className="mb-4" />
+      <p className="text-gray-300 mb-6">A curated selection of recent work blending robotics, design, and web engineering.</p>
+
+      <div className="grid md:grid-cols-2 gap-6">
+            <article className="p-4 rounded-lg hover:scale-[1.01] transition-transform bg-white/3 border border-white/5">
+              <h3 className="text-xl font-semibold">Project One</h3>
+                    <img src="/images/tes.jpg" alt="Test" className="mb-4" />
+              <p className="text-sm text-gray-300">Short description of Project One with an emphasis on cinematic UX.</p>
+            </article>
+
+            <article className="p-4 rounded-lg hover:scale-[1.01] transition-transform bg-white/3 border border-white/5">
+              <h3 className="text-xl font-semibold">Project Two</h3>
+              <img src="/images/tes.jpg" alt="Test" className="mb-4" />
+              <p className="text-sm text-gray-300">Short description of Project Two with robotics and control focus.</p>
+            </article>
+             <article className="p-4 rounded-lg hover:scale-[1.01] transition-transform bg-white/3 border border-white/5">
+              <h3 className="text-xl font-semibold">Project Two</h3>
+              <img src="/images/tes.jpg" alt="Test" className="mb-4" />
+              <p className="text-sm text-gray-300">Short description of Project Two with robotics and control focus.</p>
+            </article>
+             <article className="p-4 rounded-lg hover:scale-[1.01] transition-transform bg-white/3 border border-white/5">
+              <h3 className="text-xl font-semibold">Project Two</h3>
+              <img src="/images/tes.jpg" alt="Test" className="mb-4" />
+              <p className="text-sm text-gray-300">Short description of Project Two with robotics and control focus.</p>
+            </article>
+             <article className="p-4 rounded-lg hover:scale-[1.01] transition-transform bg-white/3 border border-white/5">
+              <h3 className="text-xl font-semibold">Project Two</h3>
+              <img src="/images/tes.jpg" alt="Test" className="mb-4" />
+              <p className="text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec nunc non nunc eleifend rutrum. Etiam pulvinar faucibus ultrices. Nulla ut vestibulum mi. Aenean eu viverra orci. Quisque lacinia tortor eu erat dignissim commodo. In eu urna ac nisl pharetra rutrum. Etiam quis ultrices massa. Suspendisse dignissim ipsum sem, sit amet pellentesque nunc vehicula eget.
+
+Curabitur at porttitor ligula, ut faucibus quam. Nulla semper sodales massa, ut efficitur magna tristique quis. Nam non tortor tristique, elementum mi quis, faucibus purus. Cras eu sapien eu elit congue congue ut quis elit. Nulla fringilla, neque non feugiat maximus, arcu eros suscipit est, pellentesque cursus purus elit et nulla. Mauris eu egestas elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed eros placerat, porta nulla id, sollicitudin enim. Maecenas sed velit placerat, dignissim erat a, ultrices ex. Integer efficitur, nibh id hendrerit tincidunt, nisl dui pulvinar sapien, in volutpat sem nisl non felis. Aenean varius, augue in tincidunt convallis, massa mauris gravida tellus, quis pellentesque risus risus sodales diam.
+
+Nam et augue ex. In id imperdiet lacus, sed sollicitudin magna. Vestibulum eleifend eleifend interdum. Vestibulum luctus vehicula dolor, volutpat varius dui auctor a. Nullam sagittis diam eu lorem mattis imperdiet. Etiam rhoncus nec dui quis varius. Integer magna lectus, iaculis ut tellus sit amet, commodo consequat orci.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et varius nibh, eu rutrum neque. Quisque id mi feugiat, molestie metus ut, imperdiet sapien. Nulla arcu sapien, fringilla at tincidunt maximus, fringilla a odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum nec ornare urna. Maecenas lobortis odio risus, sit amet vehicula erat bibendum quis. Integer venenatis aliquam ultrices. In sodales dictum eleifend. Praesent et massa et ex tristique lobortis. Vestibulum suscipit est sed sapien dignissim, a pulvinar odio eleifend. Maecenas aliquet pellentesque turpis non consectetur. Nulla feugiat gravida sapien non viverra.
+
+Praesent fringilla nibh leo, ac vehicula dolor volutpat at. Pellentesque pellentesque ultrices nunc at ullamcorper. Nunc nec enim sed lorem ultrices ultricies a egestas eros. Integer rutrum, mauris a porttitor facilisis, ligula augue feugiat orci, eu efficitur purus velit eget massa. Vestibulum blandit lacus enim, in imperdiet quam sodales nec. Sed vel mauris id eros varius imperdiet. Duis non scelerisque dui. Nam sit amet iaculis risus, a mattis lectus. Aenean ultrices interdum eros, gravida pretium risus vehicula id. Nam eget consequat augue. In ut ligula non felis tincidunt faucibus quis vitae lacus. Nulla consectetur tempor rhoncus.</p>
+            </article>
+             <article className="p-4 rounded-lg hover:scale-[1.01] transition-transform bg-white/3 border border-white/5">
+              <h3 className="text-xl font-semibold">Project Two</h3>
+              <img src="/images/tes.jpg" alt="Test" className="mb-4" />
+              <p className="text-sm text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec nunc non nunc eleifend rutrum. Etiam pulvinar faucibus ultrices. Nulla ut vestibulum mi. Aenean eu viverra orci. Quisque lacinia tortor eu erat dignissim commodo. In eu urna ac nisl pharetra rutrum. Etiam quis ultrices massa. Suspendisse dignissim ipsum sem, sit amet pellentesque nunc vehicula eget.
+
+Curabitur at porttitor ligula, ut faucibus quam. Nulla semper sodales massa, ut efficitur magna tristique quis. Nam non tortor tristique, elementum mi quis, faucibus purus. Cras eu sapien eu elit congue congue ut quis elit. Nulla fringilla, neque non feugiat maximus, arcu eros suscipit est, pellentesque cursus purus elit et nulla. Mauris eu egestas elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed eros placerat, porta nulla id, sollicitudin enim. Maecenas sed velit placerat, dignissim erat a, ultrices ex. Integer efficitur, nibh id hendrerit tincidunt, nisl dui pulvinar sapien, in volutpat sem nisl non felis. Aenean varius, augue in tincidunt convallis, massa mauris gravida tellus, quis pellentesque risus risus sodales diam.
+
+Nam et augue ex. In id imperdiet lacus, sed sollicitudin magna. Vestibulum eleifend eleifend interdum. Vestibulum luctus vehicula dolor, volutpat varius dui auctor a. Nullam sagittis diam eu lorem mattis imperdiet. Etiam rhoncus nec dui quis varius. Integer magna lectus, iaculis ut tellus sit amet, commodo consequat orci.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et varius nibh, eu rutrum neque. Quisque id mi feugiat, molestie metus ut, imperdiet sapien. Nulla arcu sapien, fringilla at tincidunt maximus, fringilla a odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum nec ornare urna. Maecenas lobortis odio risus, sit amet vehicula erat bibendum quis. Integer venenatis aliquam ultrices. In sodales dictum eleifend. Praesent et massa et ex tristique lobortis. Vestibulum suscipit est sed sapien dignissim, a pulvinar odio eleifend. Maecenas aliquet pellentesque turpis non consectetur. Nulla feugiat gravida sapien non viverra.
+
+Praesent fringilla nibh leo, ac vehicula dolor volutpat at. Pellentesque pellentesque ultrices nunc at ullamcorper. Nunc nec enim sed lorem ultrices ultricies a egestas eros. Integer rutrum, mauris a porttitor facilisis, ligula augue feugiat orci, eu efficitur purus velit eget massa. Vestibulum blandit lacus enim, in imperdiet quam sodales nec. Sed vel mauris id eros varius imperdiet. Duis non scelerisque dui. Nam sit amet iaculis risus, a mattis lectus. Aenean ultrices interdum eros, gravida pretium risus vehicula id. Nam eget consequat augue. In ut ligula non felis tincidunt faucibus quis vitae lacus. Nulla consectetur tempor rhoncus.</p>
+            </article>
+            
+          </div>
+        </div>
+        <div className="bg-white/5 backdrop-blur-300 border border-white/10 rounded-2xl p-8 shadow-lg">
+          <h2 className="text-2xl font-semibold mb-3">Right Section</h2>
+                <img src="/images/tes.jpg" alt="Test" className="mb-4" />
+
+          <p className="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec nunc non nunc eleifend rutrum. Etiam pulvinar faucibus ultrices. Nulla ut vestibulum mi. Aenean eu viverra orci. Quisque lacinia tortor eu erat dignissim commodo. In eu urna ac nisl pharetra rutrum. Etiam quis ultrices massa. Suspendisse dignissim ipsum sem, sit amet pellentesque nunc vehicula eget.
+
+Curabitur at porttitor ligula, ut faucibus quam. Nulla semper sodales massa, ut efficitur magna tristique quis. Nam non tortor tristique, elementum mi quis, faucibus purus. Cras eu sapien eu elit congue congue ut quis elit. Nulla fringilla, neque non feugiat maximus, arcu eros suscipit est, pellentesque cursus purus elit et nulla. Mauris eu egestas elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed eros placerat, porta nulla id, sollicitudin enim. Maecenas sed velit placerat, dignissim erat a, ultrices ex. Integer efficitur, nibh id hendrerit tincidunt, nisl dui pulvinar sapien, in volutpat sem nisl non felis. Aenean varius, augue in tincidunt convallis, massa mauris gravida tellus, quis pellentesque risus risus sodales diam.
+
+Nam et augue ex. In id imperdiet lacus, sed sollicitudin magna. Vestibulum eleifend eleifend interdum. Vestibulum luctus vehicula dolor, volutpat varius dui auctor a. Nullam sagittis diam eu lorem mattis imperdiet. Etiam rhoncus nec dui quis varius. Integer magna lectus, iaculis ut tellus sit amet, commodo consequat orci.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et varius nibh, eu rutrum neque. Quisque id mi feugiat, molestie metus ut, imperdiet sapien. Nulla arcu sapien, fringilla at tincidunt maximus, fringilla a odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum nec ornare urna. Maecenas lobortis odio risus, sit amet vehicula erat bibendum quis. Integer venenatis aliquam ultrices. In sodales dictum eleifend. Praesent et massa et ex tristique lobortis. Vestibulum suscipit est sed sapien dignissim, a pulvinar odio eleifend. Maecenas aliquet pellentesque turpis non consectetur. Nulla feugiat gravida sapien non viverra.
+
+Praesent fringilla nibh leo, ac vehicula dolor volutpat at. Pellentesque pellentesque ultrices nunc at ullamcorper. Nunc nec enim sed lorem ultrices ultricies a egestas eros. Integer rutrum, mauris a porttitor facilisis, ligula augue feugiat orci, eu efficitur purus velit eget massa. Vestibulum blandit lacus enim, in imperdiet quam sodales nec. Sed vel mauris id eros varius imperdiet. Duis non scelerisque dui. Nam sit amet iaculis risus, a mattis lectus. Aenean ultrices interdum eros, gravida pretium risus vehicula id. Nam eget consequat augue. In ut ligula non felis tincidunt faucibus quis vitae lacus. Nulla consectetur tempor rhoncus.</p>
+        </div>
+      </div>
+    </section>
+    <footer className="mt-16 text-sm text-gray-500">
+      &copy; {new Date().getFullYear()} Mirzaldi Pasha. All rights reserved.
+    </footer>
+  </main>
+  )
 }
